@@ -1,10 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-=begin
-   before_filter :set_i18n_locale_from_params
-  # ...
-  before_filter :authorize
-  protect_from_forgery
 
   private
 
@@ -15,6 +10,13 @@ class ApplicationController < ActionController::Base
       session[:cart_id] = cart.id
       cart
     end
+=begin
+   before_filter :set_i18n_locale_from_params
+  # ...
+  before_filter :authorize
+  protect_from_forgery
+
+  
 
     # ...
 
