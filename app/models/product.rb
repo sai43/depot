@@ -1,5 +1,7 @@
 class Product < ActiveRecord::Base
-  attr_accessible :description, :imae_url, :price, :title
+   default_scope :order => 'title'
+   validates_length_of :title, :minimum => 4
+   attr_accessible :description, :imae_url, :price, :title
    validates_uniqueness_of :title
    validates_presence_of :title, :description, :imae_url
    validates_numericality_of :price, :greater_than_or_equal_to => 0.01
